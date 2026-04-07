@@ -1,28 +1,42 @@
 {
-  "name": "todo-jobs",
+  "name": "hyperliquid-dca-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Live-ready Hyperliquid DCA bot with dry-run safety controls.",
+  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts run",
+    "start": "node dist/index.js run",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
-  "author": "Donald Iloekwe",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "dependencies": {
-    "abort-controller": "^3.0.0",
-    "bcrypt": "^5.1.0",
-    "cheerio": "^1.0.0-rc.12",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-jwt": "^6.1.0",
-    "google-auth-library": "^8.7.0",
-    "jsonwebtoken": "<REDACTED>",
-    "mongoose": "^6.6.5",
-    "morgan": "^1.10.0",
-    "node-fetch": "^2.6.7",
-    "node-libcurl": "^3.0.0-0",
-    "nodemon": "^2.0.20",
-    "psl": "^1.9.0"
+    "@nktkas/hyperliquid": "^0.32.2",
+    "terminal-pretty-logger": "^2.0.1",
+    "better-sqlite3": "^12.8.0",
+    "commander": "^14.0.3",
+    "dotenv": "^17.4.1",
+    "pino": "^10.3.1",
+    "viem": "^2.47.10",
+    "ws": "^8.20.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.58.0",
+    "@typescript-eslint/parser": "^8.58.0",
+    "eslint": "^10.2.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
   }
 }
